@@ -18,14 +18,15 @@ export default function TextForm(props) {
     // setText("Change the text here") // This is the correct way to update the text in ReactJs 
 
     return (
-
+        
         <div>
             <h1>{props.heading}</h1>
             <div className="mb-3">
-                <textarea className="form-control" id="myBox" rows="6" value={text} onChange = {handleOnChange} id="myBox" rows="8"></textarea>
+                    <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
             </div>
             <button className="btm btn-primary" onClick={handleUpClick}>Convert To Upercase</button>
             
-        </div>
+            </div>
+            
     )
 }
