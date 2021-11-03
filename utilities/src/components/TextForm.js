@@ -14,9 +14,25 @@ export default function TextForm(props) {
         setText(newText)
     }
 
+    const handleClearClick = ()=> {
+        // console.log("Uppercase was clicked" + text);
+        let newText = '';
+        setText(newText)
+    }
+
     const handleOnChange = (event)=> {
         // console.log("On Change");
         setText(event.target.value)
+    }
+
+    const handleCopy = () => {
+        console.log("I am copy");
+        var text = document.getElementById("myBox");
+        text.select();
+        text.setSelectionRange(0, 9999);
+        navigator.clipboard.writeText(text.value);
+
+
     }
 
     const [text, setText] = useState('');
@@ -32,6 +48,8 @@ export default function TextForm(props) {
             </div>
                 <button className="btm btn-primary mx-1 my-1" onClick={handleUpClick}>Convert To Upercase</button>
                 <button className="btm btn-primary mx-1 my-1" onClick={handleLoClick}>Convert To Lowercase</button>
+                <button className="btm btn-primary mx-1 my-1" onClick={handleClearClick}>Clear Text</button>
+                <button className="btm btn-primary mx-1 my-1" onClick={handleCopy}>Copy text</button>
             </div>
 
             <div className="container my-3">
