@@ -29,7 +29,6 @@ export default function TextForm(props) {
         console.log("I am copy");
         var text = document.getElementById("myBox");
         text.select();
-        text.setSelectionRange(0, 9999);
         navigator.clipboard.writeText(text.value);
 
 
