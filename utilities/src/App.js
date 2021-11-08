@@ -6,7 +6,7 @@ import About from './components/About';
 
 
 function App() {
-  const [darkMode, setdarkMode] = useState(false); //Wheather dark mode is enabled or not
+  // const [darkMode, setdarkMode] = useState(false); //Wheather dark mode is enabled or not
   return (
     <>
       <Navbar title="TextUtils" />
