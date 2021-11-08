@@ -15,7 +15,7 @@ function App() {
 
       <div className="container my-3">
       <TextForm heading = "Enter the text to analyze"/>
-      <About/>
+      {/* <About/> */}
 
       </div>
 
