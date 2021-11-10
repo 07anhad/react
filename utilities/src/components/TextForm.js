@@ -38,10 +38,10 @@ export default function TextForm(props) {
 
     return (
         <>
-            <div className = "container">
+            <div className = "container" style={{color: props.mode==='dark'?'white':'black'}}>
             <h1>{props.heading}</h1>
             <div className="mb-3">
-            <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'#505050':'dark'}} id="myBox" rows="8"></textarea>
+            <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'rgb(21 21 21)':'white', color: props.mode==='dark'?'white':'black'}} id="myBox" rows="8"></textarea>
             </div>
                 <button className="btm btn-primary mx-1 my-1" onClick={handleUpClick}>Convert To Upercase</button>
                 <button className="btm btn-primary mx-1 my-1" onClick={handleLoClick}>Convert To Lowercase</button>
@@ -49,12 +49,12 @@ export default function TextForm(props) {
                 <button className="btm btn-primary mx-1 my-1" onClick={handleCopy}>Copy text</button>
             </div>
 
-            <div className="container my-3">
+            <div className="container my-3" style={{color: props.mode==='dark'?'white':'black'}}>
                 <h2>Your text summary</h2>
                 <p>{text.split(" ").length - 1} <b>words</b> and {text.length} <b>characters</b></p>
                 <p>{0.008 * (text.split(" ").length - 1)} <b>Minutes read</b></p>
                 <h2>Preview of your text</h2>
-                <p>{text}</p>
+                <p>{text.length>0?text:"Enter something in the textbox to preview it"}</p>
             </div>
         </>
             
