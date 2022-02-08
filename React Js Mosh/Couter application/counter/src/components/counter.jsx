@@ -21,7 +21,7 @@ class Counter extends React.Component {
     // }
 
     handleIncrement= () => {
-        console.log('Increment Clicked',this);
+        console.log('Increments Clicked',this);
     }
 
     render() {
