@@ -21,7 +21,9 @@ class Counter extends React.Component {
     // }
 
     handleIncrement= () => {
-        console.log('Increments Clicked',this);
+        // console.log('Increments Clicked',this);
+        this.setState({ count: this.state.count + 1 });
+        //TO INCREMENT THE VAUE OF STATE ON CLICKNG THE INCREMENT BUTTON
     }
 
     render() {
