@@ -13,23 +13,38 @@ class Counter extends React.Component {
 
     // { this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
 
-    renderTags() {
-        if (this.state.tags.length === 0) return <p>There are no tags</p>;
+    // renderTags() {
+    //     if (this.state.tags.length === 0) return <p>There are no tags</p>;
         
-        else return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>;
+    //     else return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>;
                 
-    }
+    // }
 
+    handleIncrement= () => {
+        console.log('Increment Clicked',this);
+    }
 
     render() {
 
         return (
             <div>
-                {this.state.tags.length===0 && "Please add some items"}
-                {this.renderTags()}
+                <span className = {this.getBadgeClasses()}><b>{this.formatCount()}</b></span>
+                <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
             </div>
         );
     }
+
+    getBadgeClasses() {
+        let classes = "badge m-2 badge-";
+        classes += this.state.count === 0 ? "danger" : "success";
+        return classes;
+    }
+
+    formatCount() {
+        const { count } = this.state;
+        return count === 0 ? 'ZERO' : count;
+    }
 }
+
 
 export default Counter;
